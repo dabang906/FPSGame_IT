@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     public float jumpPower = 10f;
     // 점프 상태 변수
     public bool isJumping = false;
-
+    int hp = 100;
 
     void Start()
     {
@@ -66,7 +66,10 @@ public class PlayerMove : MonoBehaviour
 
         // 3. 이동 속도에 맞춰 이동한다.
         cc.Move(dir * moveSpeed * Time.deltaTime);
-
-
+    }
+    public void DamageAction(int damage)
+    {
+        // 에너미의 공격력만큼 플레이어의 체력을 깎는다.
+        hp -= damage;
     }
 }
